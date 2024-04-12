@@ -27,5 +27,5 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy
-      id: deployment
-      uses: action/deploy-page@v4
+        id: deployment
+        uses: action/deploy-page@v4
