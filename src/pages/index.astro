@@ -1,0 +1,127 @@
+---
+import Timeline from "@/components/Timeline";
+import Layout from "../layouts/Layout.astro";
+import { Button } from "@/components/ui/button";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import FooterTooltip from "@/components/FooterTooltip";
+import TechCarousel from "@/components/TechCarousel.vue";
+import Skills from "@/components/Skills"
+---
+
+<Layout title="Diego F. Hernández | Software Enginner">
+  <main>
+    <div
+      class="h-[calc(100vh-60px)] flex justify-center bg-gradient-to-b from-black to-slate-800 text-white"
+    >
+      <div class="flex flex-col self-center">
+        <span class="text-center font-bold text-4xl lg:text-5xl self-center mb-3"
+          >Diego Francisco Hernández Guevara</span
+        >
+        <span class="self-center text-lg"
+          >Passionately crafting software solutions</span
+        >
+        <div class="self-center mt-5">
+          <a href="#about">
+            <Button
+              className="bg-gradient-to-bl from-black to-slate-800 font-semibold"
+            >
+              About me
+            </Button>
+          </a>
+        </div>
+      </div>
+    </div>
+    <section
+      id="about"
+      class="p-10 pt-20 xl:pt-28 xl:pr-28 xl:pl-28 xl:pb-24 bg-white scroll-mt-[60px]"
+    >
+      <div class="lg:flex lg:justify-between">
+        <div>
+          <div class="mb-16">
+            <h1 class="text-center md:text-left text-6xl">About me</h1>
+          </div>
+          <div class="flex flex-col lg:justify-between mb-16">
+            <div class="flex flex-col lg:max-w-[40vw] text-justify justify-center">
+              <span class="text-lg">
+                <p class="mb-4">
+                  I am a seasoned software engineer and dedicated artificial
+                  intelligence student with a primary emphasis on back-end
+                  design and development, complemented by experience in
+                  full-stack development. My journey spans over seven years,
+                  during which I have actively engaged in the creation and
+                  design of diverse software solutions both as a professional
+                  pursuit and a personal passion.
+                </p>
+                <p class="mb-4">
+                  I've got solid experience in building and launching full-stack
+                  applications, dealing with both front-end and back-end aspects
+                  in different setups, be it on-premise or serverless. I'm
+                  well-versed in popular front-end frameworks, back-end
+                  technologies, and utility tools and techonologies.
+                </p>
+                <p>
+                  When it comes to databases, I've worked with both traditional
+                  relational databases and newer types like graph databases. I'm
+                  also experienced with container technology, using it in both
+                  production and development environments. Additionally, I've
+                  used orchestration platforms and tools to keep operations
+                  running smoothly and efficiently.
+                </p>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col justify-center">
+          <TechCarousel client:load class="self-right md:self-center" />
+        </div>
+      </div>
+    </section>
+    <section id="skills" class="scroll-mt-[60px]">
+      <div class="pr-2 pl-2 pb-32 pt-32 md:pr-10 md:pl-10">
+        <div class="mb-16 flex justify-center">
+          <h1 class="text-6xl">Skills</h1>
+        </div>
+        <Skills client:load />
+      </div>
+    </section>
+    <section
+      id="education"
+      class="bg-gradient-to-b from-slate-800 to-black text-white md:pr-32 md:pl-32 pt-24 pb-24 scroll-mt-[59px]"
+    >
+      <div class="flex justify-center">
+        <span class="self-center text-6xl mb-10 md:mb-4">Education</span>
+      </div>
+      <Timeline client:only="react" />
+    </section>
+    <section
+      id="contact"
+      class="bg-black text-white h-[100%] pr-10 pl-10 md:pr-32 md:pl-32 pb-24 scroll-mt-[60px]"
+    >
+      <hr class="h-[10px] bg-white mb-24" />
+      <div class="flex justify-between flex-col md:flex-row">
+        <span class="text-4xl font-bold self-center mb-10">Contact</span>
+        <div class="flex self-center space-x-4">
+          <a href="https://github.com/DiegoFHG" target="_blank"
+            ><FaGithub size={40} /></a
+          >
+          <a href="https://linkedin.com/in/DiegoFHG" target="_blank"
+            ><FaLinkedin size={40} /></a
+          >
+        </div>
+      </div>
+    </section>
+    <section
+      class="bg-black flex justify-center text-white p-5 scroll-mt-[60px]"
+    >
+      <span
+        >Made with <a
+          class="font-semibold"
+          href="https://astro.build"
+          target="_blank">Astro</a
+        > & <FooterTooltip client:load />.</span
+      >
+    </section>
+  </main>
+</Layout>
+
+<style></style>
